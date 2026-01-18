@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Enkripsi Dokumen</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .card {
+      background: white;
+      width: 380px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .input-group {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      font-size: 13px;
+      color: #444;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    .footer {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🔐 Enkripsi Dokumen</h2>
+    <p>Lindungi dokumen Anda menggunakan AES atau DES</p>
+
+    <form action="/encrypt" method="POST" enctype="multipart/form-data">
+
+      <div class="input-group">
+        <label>Pilih Dokumen</label>
+        <input type="file" name="document" required>
+      </div>
+
+      <div class="input-group">
+        <label>Algoritma Enkripsi</label>
+        <select name="algorithm">
+          <option value="AES">AES</option>
+          <option value="DES">DES</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Password Enkripsi</label>
+        <input type="password" name="password" placeholder="Masukkan password" required>
+      </div>
+
+      <button type="submit">Enkripsi Sekarang</button>
+    </form>
+
+  </div>
+
+</body>
+</html>
